@@ -63,10 +63,16 @@ export interface IExceptionHitTypeData {
 	// A description of the exception.
 	exDescription: string;
 	// true if the exception was fatal.
-	exFatal: boolean;
+	exFatal?: boolean;
 }
 
-function trackException() {}
+function trackException(error: IExceptionHitTypeData) {
+	const { exDescription, exFatal } = error;
+	ga('send', 'exception', {
+		exDescription,
+		exFatal: exFatal || false
+	});
+}
 
 function trackTiming(data: ITimingHitTypeData) {
 	if (gaNotLoaded()) return;

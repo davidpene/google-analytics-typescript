@@ -1,6 +1,6 @@
 {
 	"name": "google-analytics-typescript",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"description": "A google analytics library to use in typescript projects",
 	"keywords": [
 		"google",
